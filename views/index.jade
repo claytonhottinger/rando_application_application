@@ -3,3 +3,61 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+
+  header
+    h1 Rando
+    a(href='/admin')
+      button Admin
+
+  main
+    form.app
+      fieldset
+        legend Personal Information
+        input(name='firstname' type='text' placeholder='First Name')
+        <br>
+        input(name='lastname' type='text' placeholder='Last Name')
+        <br>
+        input(name='desiredjob' type='text' placeholder='Desired Job')
+        <br>
+        input(name='desiredloc' type='text' placeholder='Desired Location')
+        <br>
+        input(name='skills' type='text' placeholder='Skills')
+        <br>
+      fieldset
+        legend Employment History
+        fieldset
+          legend Job #1
+          input(name='jobtitle1' type='text' placeholder='Job Title')
+          <br>
+          input(name='employer1' type='text' placeholder='Employer')
+          <br>
+          input(name='city1' type='text' placeholder='City')
+          <br>
+          input(name='state1' type='text' placeholder='State')
+          <br>
+          input(name='description1' type='text' placeholder='Description')
+          <br>
+        fieldset
+          legend Job #2
+          input(name='jobtitle2' type='text' placeholder='Job Title')
+          <br>
+          input(name='employer2' type='text' placeholder='Employer')
+          <br>
+          input(name='city2' type='text' placeholder='City')
+          <br>
+          input(name='state2' type='text' placeholder='State')
+          <br>
+          input(name='description2' type='text' placeholder='Description')
+          <br>
+        fieldset
+          legend Job #3
+          input(name='jobtitle3' type='text' placeholder='Job Title')
+          <br>
+          input(name='employer3' type='text' placeholder='Employer')
+          <br>
+          input(name='city3' type='text' placeholder='City')
+          <br>
+          input(name='state3' type='text' placeholder='State')
+          <br>
+          input(name='description3' type='text' placeholder='Description')
+      input(name='submit' type='submit')
