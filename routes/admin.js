@@ -4,15 +4,18 @@ var mongo = require('../data/mongo');
 
 /* GET home page. */
 router.get('/',function(req,res,next){
-  res.render('admin',{title: 'Admin'});
-})
+  mongo.applications.find().sort({_id:-1}).limit(5).toArray(function(err,arr){
+    console.log(arr);
+    res.render('admin',{title: 'Admin', first5: arr});
+  });
 
-router.post('/search', function(req, res, next) {
-  var field = req.body.field;
-  var value = req.body.value;
-  console.log(req.body);
-  var result = mongo.applications.find();
-  res.send(result);
+});
+
+router.get('/search', function(req, res, next) {
+  console.log(req.query);
+  mongo.applications.find(req.query).toArray(function(err,arr){
+    res.send(arr);
+  });
 });
 
 module.exports = router;

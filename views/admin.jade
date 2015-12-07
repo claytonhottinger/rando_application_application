@@ -7,8 +7,44 @@ block content
   header
     h1 Rando Corp Applicant Admin
 
-  form.search(name='searchform')
-    input(type='text' name='firstname')
-    input(type='text' name='lastname')
-    input(type='text' name='desiredloc')
-    input(type='text' name='skills')
+  .row
+    .col-md-3
+      form.search(name='searchform')
+        fieldset
+        legend Search for Employees:
+          <br>
+          label(for='firstname') First Name
+          <br>
+          input(type='text' name='firstname')
+          <br>
+          label(for='lastname') Last Name
+          <br>
+          input(type='text' name='lastname')
+          <br>
+          label(for='desiredloc') Desired Location
+          <br>
+          input(type='text' name='desiredloc')
+          <br>
+          label(for='skills') Skills
+          <br>
+          input(type='text' name='skills')
+          <br>
+          input(type='submit')
+    .col-md-9
+      table
+        tr
+          th First Name
+          th Last Name
+          th Desired Location
+          th Last Employer
+          th Skills
+        for elem in first5
+          tr.data
+            td #{elem.firstname}
+            td #{elem.lastname}
+            td #{elem.desiredloc}
+            td #{elem.employer1}
+            td #{elem.skills}
+
+
+  script(src='/javascripts/search.js')

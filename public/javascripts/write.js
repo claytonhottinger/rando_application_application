@@ -20,8 +20,4 @@ $(function(){
     });
   });
 
-  $('.search').on('submit',function(event){
-    event.preventDefault();
-
-  })
 });
